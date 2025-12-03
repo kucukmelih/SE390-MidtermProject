@@ -1,5 +1,8 @@
-const apiBase =
-  window.API_BASE_URL || `${window.location.protocol}//localhost:5005`;
+const defaultApiBase =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5005"
+    : `${window.location.origin}/api`;
+const apiBase = window.API_BASE_URL || defaultApiBase;
 const endpoint = `${apiBase}/predict`;
 const productsEndpoint = `${apiBase}/products`;
 

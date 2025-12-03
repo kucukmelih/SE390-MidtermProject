@@ -147,11 +147,46 @@ def render_products(products: List[Dict[str, Any]]) -> None:
             st.divider()
 
 
+def render_header() -> None:
+    st.markdown(
+        """
+        <div class="section-card hero">
+            <p class="eyebrow">Live inventory insights</p>
+            <h1 class="page-title">Inventory Risk Radar</h1>
+            <p class="lede">Streamlit view of your catalog with model-backed explanations for each risk check.</p>
+            <div class="metric-row">
+                <span class="metric-chip">Streamlit + Python</span>
+                <span class="metric-chip">Flask model fallback ready</span>
+                <span class="metric-chip">Catalog: backend/products.json</span>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def inject_styles() -> None:
     st.markdown(
         """
         <style>
-            .stApp {background: radial-gradient(circle at 10% 20%, #1b2735, #0d1117 60%);}
+            .stApp {background: radial-gradient(circle at 10% 20%, #0f172a, #0b1220 60%); color: #e8edf5;}
+            .block-container {padding-top: 1rem; max-width: 1200px;}
+            h1, h2, h3, h4 {color: #f2f5fb;}
+            .section-card {background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.3rem 1.5rem; box-shadow: 0 12px 40px rgba(0,0,0,0.35);}
+            .hero {margin-bottom: 1rem;}
+            .eyebrow {text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem; color: #8ea0c2; margin-bottom: 0.15rem;}
+            .page-title {margin: 0 0 0.25rem 0; font-size: 2.4rem;}
+            .lede {color: #c7d3e5; margin-bottom: 0.7rem;}
+            .metric-row {display: flex; gap: 0.5rem; flex-wrap: wrap;}
+            .metric-chip {display: inline-flex; align-items: center; padding: 0.45rem 0.75rem; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #d8e0ee; font-size: 0.9rem;}
+            div[data-testid="stForm"] {background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 1rem; border-radius: 14px;}
+            div[data-testid="stForm"] button[kind="primary"] {width: 100%;}
+            div[data-testid="column"] > div {background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.25);}
+            .badge {text-transform: uppercase; letter-spacing: 0.5px;}
+            .stMarkdown {color: #e8edf5;}
+            .stCaption {color: #a6b6cf;}
+            img {border-radius: 12px;}
+            div[data-testid="stDivider"] {margin: 0.8rem 0;}
         </style>
         """,
         unsafe_allow_html=True,
@@ -166,9 +201,7 @@ def main() -> None:
     )
     inject_styles()
 
-    st.title("Inventory Risk Radar")
-    st.write("Streamlit dashboard to check stock risk with model-backed explanations.")
-    st.caption("Model fallback keeps the app working even if the pickle file is missing.")
+    render_header()
 
     render_custom_form()
     st.markdown("---")
