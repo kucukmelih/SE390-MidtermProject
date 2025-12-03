@@ -1,0 +1,7 @@
+Sanal ortam giris:
+source venv/bin/activate
+deactivate
+
+Uygulamayi calistirma:
+MidtermProject/backend % python app.py
+MidtermProject/frontend % python -m http.server 8000

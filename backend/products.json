@@ -1,0 +1,74 @@
+[
+  {
+    "id": "p1",
+    "category": "Wearables",
+    "name": "PulseFit Smartwatch",
+    "description": "Premium fitness wearable with advanced health tracking and weekly firmware updates.",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+    "stock_amount": 800,
+    "weekly_sales": 2,
+    "product_age_days": 300,
+    "rating": 2.1,
+    "return_rate": 0.25
+  },
+  {
+    "id": "p2",
+    "category": "Audio",
+    "name": "EchoTone Headphones",
+    "description": "Wireless over-ear headphones with adaptive noise cancellation and 40-hour battery.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+    "stock_amount": 320,
+    "weekly_sales": 12,
+    "product_age_days": 140,
+    "rating": 4.0,
+    "return_rate": 0.08
+  },
+  {
+    "id": "p3",
+    "category": "Footwear",
+    "name": "AeroSprint Sneakers",
+    "description": "Lightweight runners with responsive foam and breathable knit upper.",
+    "image": "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80",
+    "stock_amount": 120,
+    "weekly_sales": 28,
+    "product_age_days": 45,
+    "rating": 4.8,
+    "return_rate": 0.04
+  },
+  {
+    "id": "p4",
+    "category": "Home Tech",
+    "name": "LumaSmart Bulb Pack",
+    "description": "Smart LED bulbs with adaptive warmth, energy monitoring, and Matter support.",
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    "stock_amount": 540,
+    "weekly_sales": 6,
+    "product_age_days": 210,
+    "rating": 3.2,
+    "return_rate": 0.14
+  },
+  {
+    "id": "p5",
+    "category": "Kitchen",
+    "name": "BrewPro Espresso Maker",
+    "description": "Compact espresso machine with dual thermoblocks and auto milk frothing.",
+    "image": "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80",
+    "stock_amount": 410,
+    "weekly_sales": 4,
+    "product_age_days": 180,
+    "rating": 3.7,
+    "return_rate": 0.18
+  },
+  {
+    "id": "p6",
+    "category": "Gaming",
+    "name": "NovaPlay Console",
+    "description": "Compact 4K gaming console with cloud sync and adaptive controllers.",
+    "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80",
+    "stock_amount": 250,
+    "weekly_sales": 9,
+    "product_age_days": 95,
+    "rating": 3.4,
+    "return_rate": 0.12
+  }
+]

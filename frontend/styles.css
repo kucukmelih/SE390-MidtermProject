@@ -1,0 +1,160 @@
+:root {
+  --brand-ink: #0f172a;
+  --brand-surface: #0b1224;
+  --brand-accent: #5ce1e6;
+  --brand-gradient: linear-gradient(135deg, #0f172a 0%, #102a43 50%, #0b1224 100%);
+  --card-radius: 18px;
+  --text-muted: #b9bcbe;
+  font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--brand-gradient);
+  min-height: 100vh;
+}
+
+body {
+  background: var(--brand-gradient);
+  color: #e2e8f0;
+}
+
+.page-wrap {
+  min-height: 100vh;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.product-card {
+  border: none;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+}
+
+.product-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+.product-card .card-body {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+}
+
+.product-category {
+  color: var(--brand-accent);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.card-title {
+  color: #f8fafc;
+}
+
+.card-text,
+.small,
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.risk-result .badge {
+  font-size: 0.95rem;
+  padding: 0.55rem 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+.risk-result ul li {
+  color: #ffffff;
+}
+
+.risk-result ul li::before {
+  content: "• ";
+  color: var(--brand-accent);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1050;
+}
+
+.modal-card {
+  background: linear-gradient(180deg, rgba(16, 24, 40, 0.95), rgba(12, 18, 33, 0.95));
+  border-radius: 16px;
+  width: min(900px, 100%);
+  color: #e2e8f0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-header {
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.modal-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.modal-card .badge {
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5ce1e6 0%, #3fb4f8 100%);
+  border: none;
+  color: #0b1224;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(92, 225, 230, 0.2);
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+input.form-control {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+label.form-label {
+  color: #ffffff;
+}
+
+input.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+input.form-control:focus {
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 0.15rem rgba(92, 225, 230, 0.15);
+}
+
+@media (max-width: 767px) {
+  header .display-5 {
+    font-size: 2rem;
+  }
+
+  .product-card .card-img-top {
+    height: 180px;
+  }
+}

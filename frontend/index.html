@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Risk Radar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <header class="py-4">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-md-between">
+            <div>
+              <p class="eyebrow mb-2">Live Inventory Insights</p>
+              <h1 class="display-5 fw-semibold text-white mb-1">Inventory Risk Radar</h1>
+              <p class="lead text-white-50 mb-0">
+                Spot stock risk in seconds with model-backed explanations.
+              </p>
+            </div>
+            <div class="mt-3 mt-md-0 text-md-end">
+              <span class="badge bg-light text-dark px-3 py-2">Flask + Bootstrap 5</span>
+              <div class="text-white-50 small mt-2">
+                Model accuracy: <span class="text-white fw-semibold">97.5%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="pb-5">
+        <div class="container">
+          <div class="row g-4" id="products-row">
+            <div class="col-12">
+              <div class="card product-card shadow" data-risk-card data-mode="form">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                    <div>
+                      <p class="product-category mb-1">Custom Scenario</p>
+                      <h5 class="card-title mb-0">Try your own numbers</h5>
+                    </div>
+                    <span class="badge bg-info text-dark">Live API</span>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-12 col-md-4 col-lg-2">
+                      <label class="form-label">Stock amount</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        data-input="stock_amount"
+                        placeholder="e.g., 500"
+                      />
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-2">
+                      <label class="form-label">Weekly sales</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        data-input="weekly_sales"
+                        placeholder="e.g., 8"
+                      />
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-2">
+                      <label class="form-label">Product age (days)</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        data-input="product_age_days"
+                        placeholder="e.g., 120"
+                      />
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-2">
+                      <label class="form-label">Rating</label>
+                      <input
+                        type="number"
+                        step="0.1"
+                        class="form-control"
+                        data-input="rating"
+                        placeholder="e.g., 3.7"
+                      />
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-2">
+                      <label class="form-label">Return rate</label>
+                      <input
+                        type="number"
+                        step="0.01"
+                        class="form-control"
+                        data-input="return_rate"
+                        placeholder="e.g., 0.12"
+                      />
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-2 d-flex align-items-end">
+                      <button class="btn btn-primary w-100 check-risk" type="button">Check Risk</button>
+                    </div>
+                  </div>
+                  <div class="risk-result mt-3">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                      <span class="badge bg-secondary">Awaiting check</span>
+                      <button class="btn btn-sm btn-outline-light toggle-details d-none" type="button">
+                        Details
+                      </button>
+                    </div>
+                    <ul class="list-unstyled mt-2 mb-0 d-none"></ul>
+                    <div class="error small text-danger mt-1 d-none"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+    <div id="modal-overlay" class="modal-overlay d-none">
+      <div class="modal-card">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <div>
+            <p class="product-category mb-1" id="modal-category"></p>
+            <h5 class="mb-0" id="modal-title"></h5>
+          </div>
+          <button class="btn-close btn-close-white" id="modal-close" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row g-4">
+          <div class="col-12 col-md-5">
+            <img id="modal-image" class="img-fluid rounded-3 shadow-sm" alt="Product image" />
+            <p class="text-muted small mt-2 mb-0" id="modal-description"></p>
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge" id="modal-risk-badge">Risk</span>
+              <span class="text-muted" id="modal-stats"></span>
+            </div>
+            <h6 class="text-white-50 mb-2">Risk Details</h6>
+            <ul class="list-unstyled mb-0" id="modal-explanations"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
