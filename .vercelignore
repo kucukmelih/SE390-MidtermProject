@@ -1,0 +1,9 @@
+venv
+__pycache__
+*.pyc
+*.pkl
+*.ipynb
+*.docx
+SE 390 01 MİDTERM.docx
+notes.txt
+README.md
